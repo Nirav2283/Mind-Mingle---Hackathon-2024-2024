@@ -1,0 +1,87 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    /* Your background image and styles */
+    margin: 0;
+    padding: 0;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.about-us {
+    text-align: center;
+    padding: 20px;
+}
+
+h1 {
+    font-size: 3em;
+    color: black;
+    margin-bottom: 20px;
+}
+
+.description p {
+    font-size: 1.2em;
+    color: #0c0000;
+    margin: 10px 0;
+    line-height: 1.6;
+}
+
+.profile-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 40px;
+}
+
+.profile {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    margin: 15px;
+    padding: 20px;
+    width: 200px;
+    text-align: center;
+    transition: transform 0.3s ease;
+    position: relative;
+    cursor: pointer;
+}
+
+.profile:hover {
+    transform: scale(1.05);
+}
+
+.profile img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 15px;
+}
+
+.profile h3 {
+    font-size: 1.5em;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.profile p {
+    font-size: 1.1em;
+    color: #777;
+}
+
+/* Hidden content styles */
+.more-info {
+    display: none;
+    font-size: 1em;
+    color: #555;
+    margin-top: 10px;
+}
+
+.profile.open .more-info {
+    display: block;
+}
+
+.profile.open {
+    /* Optional: Change styles when open */
+    background-color: #f0f0f0;
+}

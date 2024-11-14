@@ -1,0 +1,275 @@
+body {
+    margin: auto;
+    font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+    overflow: auto;
+    background: linear-gradient(315deg, rgba(101,0,94,1) 3%, rgba(60,132,206,1) 38%, rgba(48,238,226,1) 68%, rgba(183, 133, 255, 1) 98%);
+    animation: gradient 15s ease infinite;
+    background-size: 400% 400%;
+    font-family: "poppins" , sans-serif;
+    background-attachment: fixed;
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 0%;
+    }
+    50% {
+        background-position: 100% 100%;
+    }
+    100% {
+        background-position: 0% 0%;
+    }
+}
+
+.wave {
+    background: rgb(255 255 255 / 25%);
+    border-radius: 1000% 1000% 0 0;
+    position: fixed;
+    width: 200%;
+    height: 12em;
+    animation: wave 10s -3s linear infinite;
+    transform: translate3d(0, 0, 0);
+    opacity: 0.8;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+}
+
+.wave:nth-of-type(2) {
+    bottom: -1.25em;
+    animation: wave 18s linear reverse infinite;
+    opacity: 0.8;
+}
+
+.wave:nth-of-type(3) {
+    bottom: -2.5em;
+    animation: wave 20s -1s reverse infinite;
+    opacity: 0.9;
+}
+
+@keyframes wave {
+    2% {
+        transform: translateX(1);
+    }
+
+    25% {
+        transform: translateX(-25%);
+    }
+
+    50% {
+        transform: translateX(-50%);
+    }
+
+    75% {
+        transform: translateX(-25%);
+    }
+
+    100% {
+        transform: translateX(1);
+    }
+}
+
+.container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.game-container{
+    width: 800px;
+    padding: 20px;
+    border-radius: 10px;
+    row-gap: 15px;
+}
+
+.cards-container{
+    display: grid;
+    grid-template-rows: 120px 125px 125px;
+    grid-template-columns: 200px 200px 200px 200px;
+    grid-gap: 20px 10px;
+    place-items: center;
+
+}
+
+.heading-container{
+    text-align: center;
+}
+
+.gfg-heading{
+    color: #062e7d;
+}
+
+.card{
+    justify-items: center;
+    display: flex;
+    align-items: center;
+    position: relative;
+    cursor: pointer;
+}
+
+.outline-image{
+    position: absolute;
+    border-radius: 10px;
+    top: 0;
+    left: 0;
+    height: 125px;
+    width: 125px;
+    border-radius: 50%;
+}
+
+.card-image{
+    height: 125px;
+    width: 125px;
+    transform: rotateY(90deg); 
+    transition: all ease-in 0.25s;
+    mix-blend-mode: multiply;
+}
+
+.progress-container{
+    text-align: center;
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    margin: 50px 0 20px 0;
+}
+
+.move-counter{
+    padding: 10px 20px;
+    border-radius: 25px;
+    border: 1px solid #ccc;
+}
+
+.restart-button{
+    padding: 10px 20px;
+    background-color: #062e7d;
+    border: none;
+    border-radius: 25px;
+    color: #fff;
+    cursor: pointer;
+}
+
+.restart-button:hover{
+    background-color: transparent;
+    border: 1px solid  #062e7d;
+    color:  #062e7d;
+}
+
+/* Dynamic classes that are being added by JavaScript */
+.toggled .card-image { 
+    transform: rotateY(0deg); 
+    transition-delay: 0.25s; 
+} KO
+
+.item .outline-image { 
+    transition: all ease-in 0.25s; 
+    transition-delay: 0.25s; 
+} 
+  
+.toggled .outline-image { 
+    transform: rotateY(90deg); 
+    transition-delay: 0s; 
+}
+
+@media screen and (max-width: 767px) {
+    .game-container{
+        width: 100%;
+    }
+    
+    .cards-container{
+        grid-template-rows: 125px 125px 125px 125px;
+        grid-template-columns: 33% 33% 33%;
+        grid-gap: 10px 10px;
+    }
+
+    .outline-image{
+        height: 100px;
+        width: 100px;
+    }
+    
+    .card-image{
+        height: 100px;
+        width: 100px;
+    }
+
+    .progress-container{
+        margin: 10px 0 10px 0;
+    }
+    
+}
+.button-89 {
+    --b: 3px;   /* border thickness */
+    --s: .45em; /* size of the corner */
+    --color: #373B44;
+
+    padding: calc(.5em + var(--s)) calc(.9em + var(--s));
+    color: var(--color);
+    --_p: var(--s);
+    background:
+        conic-gradient(from 90deg at var(--b) var(--b),#0000 90deg,var(--color) 0)
+        var(--_p) var(--_p)/calc(100% - var(--b) - 2*var(--_p)) calc(100% - var(--b) - 2*var(--_p));
+    transition: .3s linear, color 0s, background-color 0s;
+    outline: var(--b) solid #0000;
+    outline-offset: .6em;
+    font-size: 16px;
+
+    border: 0;
+
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+}
+
+.button-89:hover,
+.button-89:focus-visible {
+    --_p: 0px;
+    outline-color: var(--color);
+    outline-offset: .05em;
+}
+
+.button-89:active {
+    background: var(--color);
+    color: #fff;
+}
+
+/* Instruction overlay */
+/* General Overlay Styles */
+.instruction-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+/* Instruction Content Styles */
+.instruction-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    max-width: 500px;
+    width: 80%;
+    /* Centering */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+ul {
+  list-style: none; /* Remove default bullets */
+  padding: 0;
+}
+
+li {
+  background: url('../Image/bulb.gif') no-repeat left center;
+  background-size: 30px 30px; 
+  padding-left: 30px; 
+  line-height: 1.2;
+}

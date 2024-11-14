@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content=
+"width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <title>Maze Game</title>
+</head>
+
+<body>
+    <div id="instructionOverlay" class="instruction-overlay">
+        <div class="instruction-content">
+            <h2>Welcome to the Looping Game(LEVEL 2)!</h2>
+            <h2>Rules of The game:</h2>
+            <ul>
+                <li>You will be given a Maze.</li><br>
+                <li>There Will Be a Red colour Dot is a player</li><br>
+                <li>And Blue colur Dot is a Destination.</li><br>
+                <li>When you will reach Destination There Will be a Exercise of 3 Question.</li><br>
+                <li>It is Operated by Arrow key or Given Buttons.</li>
+            </ul>
+            <h5>For Better Experience Play on Desktop!</h5>
+            <button class="button-89" onclick="startGame()">Start Game</button>
+        </div>
+    </div>
+
+    <div class="menubar">
+        <h2
+            style="color:rgb(225, 176, 181);
+            font-family: 'Lucida Sans', 
+                         'Lucida Sans Regular', 
+                         'Lucida Grande', 
+                         'Lucida Sans Unicode', 
+                         Geneva, Verdana, sans-serif;">
+            Labyrinth for Loops
+        </h2>
+        <button class="startbtn">Start</button>
+        <button id="btnUp">Up</button>
+        <button id="btnDown">Down</button>
+        <button id="btnRight">Right</button>
+        <button id="btnLeft">Left</button>
+    </div>
+    <ul class="background">
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+    <div class="content">
+        <div class="msgbox"></div>
+        <canvas id="mazeCanvas" 
+                height="400px" width="400px">
+        </canvas>
+    </div>
+    <script src="script2.js"></script>
+</body>
+
+</html>

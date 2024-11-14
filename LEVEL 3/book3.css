@@ -1,0 +1,107 @@
+body {
+    margin: 0;
+    padding: 0;
+    background: #f2f2f2;
+    font-family: "poppins" ,sans-serif;
+    background-image: url("Image/bg.svg");
+    font-size: 11.5px;
+  }
+  
+  .container {
+    max-width: 1000px;
+    margin: 30px auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+  .vidu {
+    position: relative;
+    margin: 20px 0;
+    width: 360px;
+    height: 570px;
+    background: linear-gradient(#fef4ff, #daba7a);
+    transform-style: preserve-3d;
+    transform: perspective(2000px);
+    transition: 1s;  
+  }
+  
+  .vidu:hover {
+    z-index: 1111;
+    transform: perspective(2000px);
+  
+    box-shadow: 5px 5px 20px rgb(229, 193, 138);
+  }
+  
+  .vidu .img-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    border: 3.9px solid #fffefe;
+    box-sizing: border-box;
+    transform-origin: left;
+    z-index: 1;
+    transition: 1s;
+    box-shadow: 5px 5px 20px rgb(185, 140, 170);
+  }
+  .vidu .img-container img {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+  }
+  
+  .vidu:hover .img-container {
+    transform: rotateY(-135deg);
+    
+  }
+  
+  .vidu .vidu-details {
+    position: absolute;
+    left: 0;
+    top: 0;
+    box-sizing: border-box;
+    padding: 20px;
+    color: #000;
+    
+  }
+  
+  .vidu .vidu-details h2 {
+    margin: 0;
+    padding: 0.5em 0;
+    text-transform: uppercase;
+    font-size: 2em;
+    background: linear-gradient(to right, #f32170, #ff0c08, #710071, #eedd44);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    animation: untold 1s infinite ease-in-out;
+  }
+  
+  .vidu .vidu-details p {
+    margin: 0;
+    padding: 0;
+    line-height: 25px;
+    font-size: 1.3em;
+    font-weight: 900;
+    
+  }
+  
+  #play-now-btn {
+    padding: 15px 30px;
+    background-color: #f0db4f;
+    color: #101820;
+    border: none;
+    font-size: 1.2rem;
+    margin-left:37%;
+    cursor: pointer;
+    transition: all 0.3s;
+  }
+  
+  #play-now-btn:hover {
+    background-color: #e3e3e3;
+    color: #101820;
+    transform: scale(1.05);
+  }
+  
+  

@@ -1,0 +1,440 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-size: 100%;
+    margin: 0;
+    font-family: "poppins" , sans-serif;
+}
+
+@keyframes animate {
+    0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 1;
+        border-radius: 0;
+    }
+
+    100% {
+        transform: translateY(-1000px) rotate(720deg);
+        opacity: 0;
+        border-radius: 50%;
+    }
+}
+
+@keyframes animate {
+    0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 1;
+        border-radius: 0;
+    }
+
+    100% {
+        transform: translateY(-1000px) rotate(720deg);
+        opacity: 0;
+        border-radius: 50%;
+    }
+}
+
+.menubar {
+    z-index: 1;
+}
+
+p {
+    margin: 0;
+    margin-left: 10px;
+    color: #0d3b4e;
+    font-weight: 800;
+}
+
+.background {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    margin: 0;
+    padding: 0;
+    background-image:linear-gradient(rgb(199, 16, 240),rgb(22, 4, 100));
+    overflow: hidden;
+}
+
+.background li {
+    position: absolute;
+    display: block;
+    list-style: none;
+    width: 20px;
+    height: 20px;
+    background: rgba(255, 255, 255, 0.409);
+    animation: animate 19s linear infinite;
+}
+
+.background li:nth-child(0) {
+    left: 2%;
+    width: 120px;
+    height: 120px;
+    bottom: -120px;
+    animation-delay: 1s;
+}
+
+.background li:nth-child(1) {
+    left: 9%;
+    width: 195px;
+    height: 195px;
+    bottom: -195px;
+    animation-delay: 2s;
+}
+
+.background li:nth-child(2) {
+    left: 69%;
+    width: 176px;
+    height: 176px;
+    bottom: -176px;
+    animation-delay: 7s;
+}
+
+.background li:nth-child(3) {
+    left: 16%;
+    width: 125px;
+    height: 125px;
+    bottom: -125px;
+    animation-delay: 1s;
+}
+
+.background li:nth-child(4) {
+    left: 25%;
+    width: 115px;
+    height: 115px;
+    bottom: -115px;
+    animation-delay: 12s;
+}
+
+.background li:nth-child(5) {
+    left: 26%;
+    width: 181px;
+    height: 181px;
+    bottom: -181px;
+    animation-delay: 23s;
+}
+
+.background li:nth-child(6) {
+    left: 3%;
+    width: 180px;
+    height: 180px;
+    bottom: -180px;
+    animation-delay: 25s;
+}
+
+.background li:nth-child(7) {
+    left: 38%;
+    width: 136px;
+    height: 136px;
+    bottom: -136px;
+    animation-delay: 19s;
+}
+
+.background li:nth-child(8) {
+    left: 1%;
+    width: 115px;
+    height: 115px;
+    bottom: -115px;
+    animation-delay: 31s;
+}
+
+.background li:nth-child(9) {
+    left: 55%;
+    width: 100px;
+    height: 100px;
+    bottom: -100px;
+    animation-delay: 6s;
+}
+
+#mazeCanvas {
+    position: absolute;
+    margin-top: 60px;
+    margin-left: -370px;
+    background-color: #e7f3d4;
+    /* border: 5px solid #4E6227; */
+    border-radius: 10px;
+}
+
+.msgbox {
+    position: absolute;
+    height: 200px;
+    width: 200px;
+    border-radius: 15px;
+    border: 5px solid #FFD700;
+    background-color: #1E90FF;
+    z-index: 1;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    visibility: hidden;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
+}
+
+.msgbox h1 {
+    color: #FFD700;
+    margin-top: 20px;
+}
+
+.msgbox h2 {
+    color: #ffffff;
+    margin-top: 10px;
+}
+
+.msgbox button {
+    background-color: #FFD700;
+    color: #000000;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 15px;
+    transition: background-color 0.3s ease;
+}
+
+.msgbox button:hover {
+    background-color: #FFC125;
+}
+
+.startbtn {
+    background-color: #af4c91;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, box-shadow 0.5s ease;
+}
+
+.startbtn:hover {
+    background-color: #64035f;
+}
+
+#btnUp,
+#btnDown,
+#btnRight,
+#btnLeft {
+    background-color: #f0db4f;
+    color: rgb(15, 1, 1);
+    padding: 8px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-right: 5px;
+}
+
+#btnUp:hover,
+#btnDown:hover,
+#btnRight:hover,
+#btnLeft:hover {
+    background-color: #e3e3e3;
+    color: #101820;
+    transform: scale(1.05);
+
+}
+
+@keyframes blinkBorder {
+
+    0%,
+    100% {
+        box-shadow: 0 0 20px #c01826;
+    }
+
+    50% {
+        box-shadow: none;
+    }
+}
+
+.startbtn.blink {
+    animation: blinkBorder 2s linear infinite;
+}
+
+@media screen and (max-width: 568px) {
+    body {
+        flex-direction: column;
+    }
+
+    #mazeCanvas {
+        width: 70%;
+        margin-left: -165px;
+
+    }
+
+    #arrowMessage {
+        top: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .background li {
+        width: 15px;
+        height: 15px;
+    }
+
+}
+
+@media screen and (max-width: 360px) {
+    body {
+        flex-direction: column;
+    }
+
+    #mazeCanvas {
+        width: 70%;
+        margin-left: -130px;
+
+    }
+}
+
+@media screen and (max-width: 328px) {
+    body {
+        flex-direction: column;
+    }
+
+    #mazeCanvas {
+        width: 70%;
+        margin-left: -120px;
+
+    }
+}
+
+@media screen and (max-width: 278px) {
+    body {
+        flex-direction: column;
+    }
+
+    #mazeCanvas {
+        width: 70%;
+        margin-left: -100px;
+
+    }
+
+}
+
+@media screen and (max-width: 580px) {
+    body {
+        flex-direction: column;
+    }
+
+    #mazeCanvas {
+        width: 70%;
+        margin-left: -165px;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    body {
+        flex-direction: column;
+    }
+
+    #mazeCanvas {
+        width: 70%;
+        margin-left: -130px;
+    }
+
+    .msgbox {
+        width: 50%;
+        height: 35%;
+    }
+}
+
+@media screen and (max-width: 280px) {
+    body {
+        flex-direction: column;
+    }
+
+    #mazeCanvas {
+        width: 70%;
+        margin-left: -100px;
+    }
+
+    .msgbox {
+        width: 40%;
+        height: 38%;
+    }
+
+    .msgbox button {
+        padding: 5px 10px;
+    }
+}
+.button-89 {
+    --b: 3px;   /* border thickness */
+    --s: .45em; /* size of the corner */
+    --color: #373B44;
+
+    padding: calc(.5em + var(--s)) calc(.9em + var(--s));
+    color: var(--color);
+    --_p: var(--s);
+    background:
+        conic-gradient(from 90deg at var(--b) var(--b),#0000 90deg,var(--color) 0)
+        var(--_p) var(--_p)/calc(100% - var(--b) - 2*var(--_p)) calc(100% - var(--b) - 2*var(--_p));
+    transition: .3s linear, color 0s, background-color 0s;
+    outline: var(--b) solid #0000;
+    outline-offset: .6em;
+    font-size: 16px;
+
+    border: 0;
+
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+}
+
+.button-89:hover,
+.button-89:focus-visible {
+    --_p: 0px;
+    outline-color: var(--color);
+    outline-offset: .05em;
+}
+
+.button-89:active {
+    background: var(--color);
+    color: #fff;
+}
+
+/* Instruction overlay */
+.instruction-overlay, .overlay , .instruction-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+.instruction-content, .overlay-content {
+    background-color: white;
+    padding: 20px;
+    opacity: 0.8;
+    border-radius: 10px;
+    text-align: center;
+    max-width: 500px;
+    width: 80%;
+}
+
+.instruction-content h2, .overlay-content h2 {
+    margin-bottom: 20px;
+}
+
+.instruction-content p, .overlay-content p, 
+.instruction-content ul, .overlay-content ul {
+    text-align: left;
+}
+
+ul {
+  list-style: none; /* Remove default bullets */
+  padding: 0;
+}
+
+li {
+  background: url('../Image/bulb.gif') no-repeat left center;
+  background-size: 30px 30px; 
+  padding-left: 30px; 
+  line-height: 1.2;
+}
+

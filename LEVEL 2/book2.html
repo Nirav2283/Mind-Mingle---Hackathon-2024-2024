@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Level 2</title>
+    <link rel="stylesheet" href="book2.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <div class="vidu">
+        <div class="img-container">
+          <img style="background-size: cover" src="Image/1.png" alt="" />
+        </div>
+        <div class="vidu-details">
+          <h3>2. Overview of Loops:</h3>
+
+          <b>General Overview of Loops:</b><br />
+          Loops are fundamental programming constructs that allow you to execute
+          a block of code repeatedly based on certain conditions. They help
+          reduce redundancy and make code more efficient and manageable.<br />
+          <br />
+
+          <b>While Loop:</b><br />
+          A while loop repeatedly executes a block of code as long as a
+          specified condition evaluates to true.<br /><br />
+
+          <b>Syntax Of While Loop in C language: </b><br />
+          while (condition) {<br />
+          // code block to be executed<br />
+          }<br><br>
+
+          <b>for loop:</b><br />
+          for Loop A for loop iterates over a sequence (such as a list, tuple,
+          or range) or other iterable objects.<br /><br />
+          
+          <b>Syntax Of For Loop in C language: </b><br />
+          for (initialization; condition; update) {<br>
+            // code block to be executed<br>
+        }
+        
+
+          <br /><br />
+        </div>
+      </div>
+    </div>
+    <button id="play-now-btn" onclick="start()">Go To the Game!</button>
+    <script>
+    document.addEventListener('DOMContentLoaded', function () {
+            Swal.fire({
+                title: 'Level 2!',
+                text: 'Here is an overview of loops in programming.',
+                icon: 'info',
+                confirmButtonText: 'Got it!'
+            });
+        });
+    function start(){
+    window.location.href = "Game/index.html";
+    }
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  </body>
+</html>

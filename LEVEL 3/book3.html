@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Level 3</title>
+    <link rel="stylesheet" href="book3.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <div class="vidu">
+        <div class="img-container">
+          <img style="background-size: cover" src="Image/2.png" alt="" />
+        </div>
+        <div class="vidu-details">
+          <h3>3. Overview of Conditional Statements:</h3>
+
+          <b>General Overview of Conditional Statements:</b>
+Conditional statements control the flow of execution in a program by allowing the program to make decisions based on conditions.<br /><br />
+
+<b>If-Else Statement:</b>
+An `if-else` statement provides an alternative block of code to execute if the condition is false.<br /><br />
+
+<b>Syntax Of If-Else Statement in C language:</b><br />
+if (condition) {<br />
+    // code block if true<br />
+} else {<br />
+    // code block if false<br />
+}
+<br />
+
+<!-- <b>If-Else If-Else Statement:</b><br />
+An `if-else if-else` statement allows multiple conditions to be checked in sequence.<br /><br />
+
+<b>Syntax Of If-Else If-Else Statement in C language:</b><br />
+<pre>
+if (condition1) {<br />
+    // code block for condition1<br />
+} else if (condition2) {<br />
+    // code block for condition2<br />
+} else {<br />
+    // code block if no conditions match<br />
+}
+</pre><br /> -->
+
+<b>Switch Statement:</b><br />
+A `switch` statement selects one of many blocks of code to execute based on the value of an expression.<br /><br />
+
+<b>Syntax Of Switch Statement in C language:</b><br />
+switch (expression) {<br />
+    case value1:<br />
+        // code block for value1<br />
+        break;<br />
+    case value2:<br />
+        // code block for value2<br />
+        break;<br />
+    default:<br />
+        // code block if no case matches<br />
+}
+
+
+        </div>
+      </div>
+    </div>
+    <button id="play-now-btn" onclick="start()">Go To the Game!</button>
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+              Swal.fire({
+                  title: 'Level 3!',
+                  text: 'Here is an overview of Conditional Statements in programming.',
+                  icon: 'info',
+                  confirmButtonText: 'Got it!'
+              });
+          });
+      function start(){
+      window.location.href = "Game/index.html";
+      }
+      </script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  </body>
+</html>

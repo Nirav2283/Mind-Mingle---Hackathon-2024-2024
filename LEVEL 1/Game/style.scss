@@ -1,0 +1,281 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+  }
+ 
+  .container {
+    width: 90%;
+    max-width: 65em;
+    // background-color: #ffffff;
+    padding: 3em 0.5em;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+    border-radius: 0.8em;
+  }
+  h3 {
+    text-align: center;
+    width: 60%;
+    margin: 0 auto 2em auto;
+    font-size: 1.2em;
+    font-weight: 600;
+    letter-spacing: 0.03em;
+    line-height: 1.8em;
+    color: #ffffff;
+  }
+  .draggable-objects,
+  .drop-points {
+    display: flex;
+    justify-content: space-around;
+    padding: 2em;
+    border-radius: 50px;
+  }
+  .draggable-image {
+    width: 8em;
+    border-radius: 50px;
+    cursor: move;
+  }
+  img {
+    width: 8em;
+    border-radius: 50px;
+    filter: drop-shadow(0 0.3em 0.9em rgb(255, 255, 255));
+  }
+  .countries {
+    width: 10em;
+    height: 8em;
+    display: grid;
+    place-items: center;
+    border: 0.25em dashed #ffffff;
+    border-radius: 0.8em;
+  }
+  .dropped {
+    padding: 0;
+    background-color: #e5ffc8;
+  }
+  .controls-container {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    background-color: #5372ef;
+    flex-direction: column;
+    top: 0;
+  }
+  .controls-container button {
+    font-size: 1.12em;
+    padding: 0.8em 1em;
+    border-radius: 0.2em;
+    border: none;
+    outline: none;
+    color: #ffffff;
+    letter-spacing: 0.06em;
+    cursor: pointer;
+  }
+  .controls-container p {
+    color: #ffffff;
+    font-size: 2em;
+    margin-bottom: 1em;
+  }
+  .hide {
+    display: none;
+  }
+  @mixin sp-layout {
+    @media screen and (max-width: 750px) {
+      @content;
+    }
+  }
+  
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+     background: radial-gradient(ellipse at bottom, #9604f7 0%, #260183 100%);
+    overflow: hidden;
+  }
+  
+  @function random_range($min, $max) {
+    $rand: random();
+    $random_range: $min + floor($rand * (($max - $min) + 1));
+    @return $random_range;
+  }
+  
+  .stars {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 120%;
+    transform: rotate(-45deg);
+  }
+  
+  .star {
+    $star-count: 50;
+    --star-color: var(white);
+    --star-tail-length: 6em;
+    --star-tail-height: 2px;
+    --star-width: calc(var(--star-tail-length) / 6);
+    --fall-duration: 9s;
+    --tail-fade-duration: var(--fall-duration);
+  
+    position: absolute;
+    top: var(--top-offset);
+    left: 0;
+    width: var(--star-tail-length);
+    height: var(--star-tail-height);
+    color: var(--star-color);
+    background: linear-gradient(45deg, white, transparent);
+    border-radius: 50%;
+    filter: drop-shadow(0 0 6px white);
+    transform: translate3d(104em, 0, 0);
+    animation: fall var(--fall-duration) var(--fall-delay) linear infinite, tail-fade var(--tail-fade-duration) var(--fall-delay) ease-out infinite;
+    
+    @include sp-layout {
+      // For mobile performance, tail-fade animation will be removed QAQ
+      animation: fall var(--fall-duration) var(--fall-delay) linear infinite;
+    }
+  
+    @for $i from 1 through $star-count {
+      &:nth-child(#{$i}) {
+        --star-tail-length: #{random_range(500em, 750em) / 100};
+        --top-offset: #{random_range(0vh, 10000vh) / 100};
+        --fall-duration: #{random_range(6000, 12000s) / 1000};
+        --fall-delay: #{random_range(0, 10000s) / 1000};
+      }
+    }
+  
+    &::before, &::after {
+      position: absolute;
+      content: '';
+      top: 0;
+      left: calc(var(--star-width) / -2);
+      width: var(--star-width);
+      height: 100%;
+      background: linear-gradient(45deg, transparent, white, transparent);
+      border-radius: inherit;
+      animation: blink 2s linear infinite;
+    }
+  
+    &::before {
+      transform: rotate(45deg);
+    }
+  
+    &::after {
+      transform: rotate(-45deg);
+    }
+  }
+  
+  @keyframes fall {
+    to {
+      transform: translate3d(-30em, 0, 0);
+    }
+  }
+  
+  @keyframes tail-fade {
+    0%, 50% {
+      width: var(--star-tail-length);
+      opacity: 1;
+    }
+  
+    70%, 80% {
+      width: 0;
+      opacity: 0.4;
+    }
+  
+    100% {
+      width: 0;
+      opacity: 0;
+    }
+  }
+  
+  @keyframes blink {
+    50% {
+      opacity: 0.6;
+    }
+  }
+
+  .button-89 {
+    --b: 3px;   /* border thickness */
+    --s: .45em; /* size of the corner */
+    --color: #373B44;
+
+    padding: calc(.5em + var(--s)) calc(.9em + var(--s));
+    color: var(--color);
+    --_p: var(--s);
+    background:
+        conic-gradient(from 90deg at var(--b) var(--b),#0000 90deg,var(--color) 0)
+        var(--_p) var(--_p)/calc(100% - var(--b) - 2*var(--_p)) calc(100% - var(--b) - 2*var(--_p));
+    transition: .3s linear, color 0s, background-color 0s;
+    outline: var(--b) solid #0000;
+    outline-offset: .6em;
+    font-size: 16px;
+
+    border: 0;
+
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+}
+
+.button-89:hover,
+.button-89:focus-visible {
+    --_p: 0px;
+    outline-color: var(--color);
+    outline-offset: .05em;
+}
+
+.button-89:active {
+    background: var(--color);
+    color: #fff;
+}
+
+/* Instruction overlay */
+.instruction-overlay, .overlay , .instruction-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+.instruction-content, .overlay-content {
+    background-color: white;
+    padding: 20px;
+    opacity: 0.8;
+    border-radius: 10px;
+    text-align: center;
+    max-width: 500px;
+    width: 80%;
+}
+
+.instruction-content h2, .overlay-content h2 {
+    margin-bottom: 20px;
+}
+
+.instruction-content p, .overlay-content p, 
+.instruction-content ul, .overlay-content ul {
+    text-align: left;
+}
+
+ul {
+  list-style: none; /* Remove default bullets */
+  padding: 0;
+}
+
+li {
+  background: url('../Image/bulb.gif') no-repeat left center;
+  background-size: 30px 30px; 
+  padding-left: 30px; 
+  line-height: 1.2;
+}
+
